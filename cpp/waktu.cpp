@@ -22,9 +22,9 @@ class Waktu {
 
         bool wrongInput() {
             return (
-                (this->jam > 24 && this->jam < 0)
+                (this->jam > 24 || this->jam < 0)
                 &&
-                (this->menit > 60 && this->menit < 0)
+                (this->menit > 59 || this->menit < 0)
             );
         }
 
