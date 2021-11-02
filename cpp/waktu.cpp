@@ -31,7 +31,13 @@ class Waktu {
         void input() {
             cout << "Masukkan jam: "; cin >>this->jam;
             cout << "Masukkan menit: "; cin >> this->menit;
+            if(this->wrongInput()) {
+                cout << "Waktu yang anda input tidak sesuai dengan ketentuan";
+                return;
+            }
         }
 
-        
+        string toString() {
+            return this->jam + ":" + this->menit;
+        }
 };
