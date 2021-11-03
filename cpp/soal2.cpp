@@ -19,6 +19,19 @@ class Matriks {
             this->kolom=k;
         }
 
+        void setBaris(int baris){
+            this->baris = baris;
+        }
+        void setKolom(int kolom){
+            this->kolom = kolom;
+        }
+        int getBaris(){
+            return this->baris;
+        }
+        int getKolom(){
+            return this->kolom;
+        }
+
         void input() {
             cout << "Masukkan jumlah baris: "; cin >> this->baris;
             cout << "Masukkan jumlah kolom: "; cin >> this->kolom;
@@ -38,7 +51,22 @@ class Matriks {
             }
         }
 
-        int *nilaiBaris() {
+        void jmlBaris(Matriks A){
+            for(int i=0; i<A.getBaris(); i++){
+                for(int j=0; j<A.getKolom(); j++){
+                    this->nilai[i][0] += A.nilai[i][j];
+                }
+            }
+        }
+        void jmlKolom(Matriks A){
+            for(int i=0; i<A.getBaris(); i++){
+                for(int j=0; j<A.getKolom(); j++){
+                    this->nilai[0][i] += A.nilai[j][i];
+                }
+            }
+        }
+
+        /*int *nilaiBaris() {
             int nilaiB[this->baris];
             for(int i=0; i<this->baris; i++) {
                 for(int j=0; j<this->kolom; j++) {
@@ -56,7 +84,7 @@ class Matriks {
                 }
             }
             return nilaiK;
-        }
+        }*/
 };
 
 int main() {
@@ -65,4 +93,14 @@ int main() {
     A.input();
     cout << "\nMatriks A\n";
     A.print();
+
+    Matriks jBaris(A.getBaris(), 1);
+    cout << "\nJumlah baris matriks A :\n";
+    jBaris.jmlBaris(A);
+    jBaris.print();
+
+    Matriks jKolom(1, A.getKolom());
+    cout << "\nJumlah kolom matriks A :\n";
+    jKolom.jmlKolom(A);
+    jKolom.print();
 }
