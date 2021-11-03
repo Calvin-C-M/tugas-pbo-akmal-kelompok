@@ -36,17 +36,6 @@ class Matriks :
             print()
 
     def getNilaiBaris(self) :
-        # jBaris = Matriks(self.baris, 0)
-        # temp = []
-        # nilaiBaris = 0
-        # for i in range(0, self.baris) : 
-        #     for j in range(0, self.kolom) :
-        #         nilaiBaris += int(self.matriks[i][j])
-        #     #print("Jumlah baris ke-" + str(i+1) + " : " + str(nilaiBaris))
-        #     temp.append(nilaiBaris)
-        #     nilaiBaris = 0
-        # jBaris.matriks = temp
-        # jBaris.print()
         nilaiB=[]
         for i in range(0, self.baris) :
             temp=0
@@ -59,18 +48,6 @@ class Matriks :
 
 
     def getNilaiKolom(self) :
-        # jKolom = Matriks(0, self.kolom)
-        # temp = []
-        # nilaiKolom = 0
-        # for i in range(0, self.baris) : 
-        #     for j in range(0, self.kolom) :
-        #         nilaiKolom += int(self.matriks[j][i])
-        #     #print("Jumlah kolom ke-" + str(i+1) + " : " + str(nilaiKolom))
-        #     temp.append(nilaiKolom)
-        #     nilaiKolom = 0
-        # jKolom.matriks = temp
-        # jKolom.print()
-
         nilaiK=[]
         for i in range(0, self.baris) :
             temp=0
