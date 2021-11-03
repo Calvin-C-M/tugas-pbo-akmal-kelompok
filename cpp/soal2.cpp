@@ -28,7 +28,7 @@ class Matriks {
             cout << "Masukkan jumlah kolom: "; cin >> this->kolom;
             for(int i=0; i<this->baris; i++) {
                 for(int j=0; j<this->kolom; j++) {
-                    cout << "Masukkan baris-" << i << " kolom-" << j << " : "; cin >> this->nilai[i][j];
+                    cout << "Masukkan baris-" << (i+1) << " kolom-" << (j+1) << " : "; cin >> this->nilai[i][j];
                 }
             }
         }
