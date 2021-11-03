@@ -6,7 +6,7 @@ class Pegawai:
         self.__nama=nama
         self.__datang=masuk
         self.__pulang=pulang
-        self.UPAH=50
+        self.UPAH=50000
 
     def setKode(self,kode) : self.__kode=kode
     def setNama(self,nama) : self.__nama=nama
@@ -37,7 +37,7 @@ class Pegawai:
 
     def hitungUpah(self) :
         jam=0
-        if int(self.hitungJamKerja()) > 0 :
+        if int(self.hitungJamKerja().getMenit()) > 0 :
             jam=int(self.hitungJamKerja().getJam())+1
         else :
             jam=int(self.hitungJamKerja().getJam())
@@ -45,12 +45,12 @@ class Pegawai:
         return jam*self.UPAH
 
     def print(self) :
-        print("| " + str(self.__kode) + "\t"
-              "| " + str(self.__nama) + "\t"
-              "| " + str(self.__datang.toString()) + "\t\t"
-              "| " + str(self.__pulang.toString()) + "\t\t"
-              "| " + str(self.hitungJamKerja().toString()) + "\t\t"
-              "| Rp" + str(self.hitungUpah()) + " |\n")
+        print("| ", str(self.__kode), "\t"
+              "| ", self.__nama, "\t"
+              "| ", self.__datang.toString(), "\t\t"
+              "| ", self.__pulang.toString(), "\t\t"
+              "| ", self.hitungJamKerja().toString(), "\t\t"
+              "| Rp", str(self.hitungUpah()), " |\n")
 
 W1D = Waktu(0, 0)
 W1P = Waktu(0, 0)
@@ -81,18 +81,19 @@ P1.print()
 P2.print()
 P3.print()
 
-W4D = Waktu(0, 0)
-W4P = Waktu(0, 0)
-W4D.setJam(9)
-W4D.setMenit(30)
-W4P.setJam(19)
-W4P.setMenit(50)
-P4 = Pegawai(200059, "Deani", W4D, W4P)
-print("| " + str(P4.getkode()) + "\t"
-    "| " + str(P4.getNama()) + "\t"
-    "| " + str(W4D.toString()) + "\t\t"
-    "| " + str(W4P.toString()) + "\t\t"
-    "| " + str(P4.hitungJamKerja().toString()) + "\t\t"
-    "| Rp" + str(P4.hitungUpah()) + " |\n")
+# W4D = Waktu(0, 0)
+# W4P = Waktu(0, 0)
+# W4D.setJam(9)
+# W4D.setMenit(30)
+# W4P.setJam(19)
+# W4P.setMenit(50)
+# P4 = Pegawai(200059, "Deani", W4D, W4P)
+# # print(str(P4.getKode()))
+# print("| ", str(P4.getkode()), "\t"
+#     "| ", P4.getNama(), "\t"
+#     "| ", W4D.toString(),  "\t\t"
+#     "| ", W4P.toString(), "\t\t"
+#     "| ", P4.hitungJamKerja().toString(), "\t\t"
+#     "| Rp", str(P4.hitungUpah()), " |\n")
 
 print("============================================================================================")
