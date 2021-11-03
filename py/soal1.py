@@ -1,5 +1,5 @@
 # ANGGOTA KELOMPOK
-# - Naufal Fahrezi (14081020035)
+# - Naufal Fahrezi (140810200035)
 # - Amalia Nur Fitri (140810200045)
 # - Calvin Calfi Montolalu (140810200053)
 # - Deani Puteri Virdiana (140810200059)
@@ -20,7 +20,7 @@ class Bintang :
                 print(" ", end=" ")
             for j in range(self.__baris-i+1) :
                 print("*", end=" ")
-            print("\n")
+            print()
 
     def printWhile(self) :
         counter=0
@@ -36,7 +36,7 @@ class Bintang :
                 print("*", end=" ")
                 j+=1
             i += 1
-            print("\n")
+            print()
 
 jumlahBaris=input("Masukkan jumlah baris: ")
 
