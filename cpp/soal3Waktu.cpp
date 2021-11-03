@@ -10,7 +10,7 @@ class Pegawai {
         string nama;
         Waktu datang;
         Waktu pulang;
-        const int UPAH=50;
+        const int UPAH=50000;
 
     public:
         Pegawai() {
@@ -56,7 +56,7 @@ class Pegawai {
                 jamMasuk++;
             }
 
-            jamKerja.setJam(jamMasuk-jamKeluar);
+            jamKerja.setJam(jamKeluar-jamMasuk);
             jamKerja.setMenit(abs(this->pulang.getMenit() - this->pulang.getMenit()));
             
             return jamKerja;
@@ -68,12 +68,12 @@ class Pegawai {
         }
 
         void print() {
-            cout << " " << this->kode << "\t"
-                 << " " << this->nama << "\t" 
+            cout << this->kode << "\t\t"
+                 << this->nama << "\t\t" 
                  << this->datang.toString() << "\t\t"
                  << this->pulang.toString() << "\t\t"
-                 << this->hitungJamKerja().toString()
-                 << " " << this->hitungUpah() << endl;
+                 << this->hitungJamKerja().toString() << "\t\t" 
+                 << "Rp" << this->hitungUpah() << endl;
         }
 };
 
