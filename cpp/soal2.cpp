@@ -75,11 +75,13 @@ int main() {
     A.print();
     vector<int> jumlahBaris=A.getNilaiBaris();
     vector<int> jumlahKolom=A.getNilaiKolom();
+    cout << "\nJumlah baris matriks A :\n";
     for(int baris: jumlahBaris) {
-        cout << baris;
+        cout << baris << "\n";
     }
 
+    cout << "\nJumlah kolom matriks A :\n";
     for(int kolom: jumlahKolom) {
-        cout << kolom;
+        cout << kolom << "\t";
     }
 }
