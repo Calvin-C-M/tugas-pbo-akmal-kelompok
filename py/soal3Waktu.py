@@ -47,10 +47,10 @@ class Pegawai:
     def print(self) :
         print("| ", str(self.__kode), "\t"
               "| ", self.__nama, "\t"
-              "| ", self.__datang.toString(), "\t\t"
-              "| ", self.__pulang.toString(), "\t\t"
-              "| ", self.hitungJamKerja().toString(), "\t\t"
-              "| Rp", str(self.hitungUpah()), " |\n")
+              "| ", self.__datang.toString(), "\t"
+              "| ", self.__pulang.toString(), "\t"
+              "| ", self.hitungJamKerja().toString(), "\t"
+              "| Rp", str(self.hitungUpah()), " |")
 
 W1D = Waktu(0, 0)
 W1P = Waktu(0, 0)
@@ -65,7 +65,7 @@ W2P = Waktu(0, 0)
 W2D.setJam(8)
 W2D.setMenit(30)
 W2P.setJam(14)
-W2P.setMenit(30)
+W2P.setMenit(20)
 P2 = Pegawai(0, "", W2D, W2P)
 P2.setKode(200045)
 P2.setNama("Amalia")
@@ -75,25 +75,19 @@ P2.setWaktuPulang(W2P)
 P3 = Pegawai(0, "", 0, 0)
 P3.input()
 print("============================================================================================")
-print("| Kode Pegawai\t| Nama\t\t| Waktu Datang\t| Waktu Pulang\t| Waktu Kerja\t| Upah     |")
+print("| Kode Pegawai\t| Nama\t\t| Waktu Datang\t| Waktu Pulang\t| Waktu Kerja\t| Upah       |")
 print("============================================================================================")
 P1.print()
 P2.print()
 P3.print()
 
-# W4D = Waktu(0, 0)
-# W4P = Waktu(0, 0)
-# W4D.setJam(9)
-# W4D.setMenit(30)
-# W4P.setJam(19)
-# W4P.setMenit(50)
-# P4 = Pegawai(200059, "Deani", W4D, W4P)
-# # print(str(P4.getKode()))
-# print("| ", str(P4.getkode()), "\t"
-#     "| ", P4.getNama(), "\t"
-#     "| ", W4D.toString(),  "\t\t"
-#     "| ", W4P.toString(), "\t\t"
-#     "| ", P4.hitungJamKerja().toString(), "\t\t"
-#     "| Rp", str(P4.hitungUpah()), " |\n")
+W4D = Waktu(0, 0)
+W4P = Waktu(0, 0)
+W4D.setJam(9)
+W4D.setMenit(30)
+W4P.setJam(19)
+W4P.setMenit(50)
+P4 = Pegawai(200059, "Deani", W4D, W4P)
+P4.print()
 
 print("============================================================================================")
