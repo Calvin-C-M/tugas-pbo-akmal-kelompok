@@ -95,9 +95,9 @@ int main() {
     Bintang *bintangFor=new Bintang(n);
     Bintang *bintangWhile=new Bintang(n);
 
-    cout << "Print bintang menggunakan for loop: \n";
+    cout << "\nPrint bintang menggunakan for loop: \n";
     bintangFor->printFor();
 
-    cout << "Print bintang menggunakan while loop: \n";
+    cout << "\nPrint bintang menggunakan while loop: \n";
     bintangWhile->printWhile();
 }
