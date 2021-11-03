@@ -31,6 +31,8 @@ class Pegawai {
 
         void setKode(int kode) { this->kode=kode; }
         void setNama(string nama) { this->nama=nama; }
+        void setWaktuDatang(Waktu dtng) { this->datang=dtng; }
+        void setWaktuPulang(Waktu plng) { this->pulang=plng; }
 
         int getKode() { return this->kode; }
         string getNama() { return this->nama; }
@@ -67,11 +69,11 @@ class Pegawai {
 
         void print() {
             cout << " " << this->kode << "\t"
-                 << " " << this->nama << "\t";
-            this->datang.toString();
-            this->pulang.toString();
-            this->hitungJamKerja().toString();
-            cout << " " << this->hitungUpah() << endl;
+                 << " " << this->nama << "\t" 
+                 << this->datang.toString() << "\t\t"
+                 << this->pulang.toString() << "\t\t"
+                 << this->hitungJamKerja().toString()
+                 << " " << this->hitungUpah() << endl;
         }
 };
 
@@ -83,6 +85,7 @@ int main() {
     W1P.setJam(17);
     W1P.setMenit(20);
     Pegawai P1(200035, "Naufal", W1D, W1P);
+    P1.print();
 
     Pegawai P2;
     P2.setKode(200045);

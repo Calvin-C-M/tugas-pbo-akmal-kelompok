@@ -38,7 +38,7 @@ class Waktu {
             }
         }
 
-        void toString() {
-            cout << this->jam + ":" + this->menit << "\t";
+        string toString() {
+            return to_string(this->jam) + ":" + to_string(this->menit);
         }
 };
