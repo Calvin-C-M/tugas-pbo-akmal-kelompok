@@ -68,12 +68,12 @@ class Pegawai {
         }
 
         void print() {
-            cout << this->kode << "\t\t"
-                 << this->nama << "\t\t" 
-                 << this->datang.toString() << "\t\t"
-                 << this->pulang.toString() << "\t\t"
-                 << this->hitungJamKerja().toString() << "\t\t" 
-                 << "Rp" << this->hitungUpah() << endl;
+            cout << "| " << this->kode << "\t"
+                 << "| " << this->nama << "\t" 
+                 << "| " << this->datang.toString() << "\t\t"
+                 << "| " << this->pulang.toString() << "\t\t"
+                 << "| " << this->hitungJamKerja().toString() << "\t\t"
+                 << "| Rp" << this->hitungUpah() << " |\n";
         }
 };
 
@@ -85,7 +85,6 @@ int main() {
     W1P.setJam(17);
     W1P.setMenit(20);
     Pegawai P1(200035, "Naufal", W1D, W1P);
-    P1.print();
 
     Pegawai P2;
     P2.setKode(200045);
@@ -96,12 +95,14 @@ int main() {
     W2D.setMenit(30);
     W2P.setJam(14);
     W2P.setMenit(30);
+    P2.setWaktuDatang(W2D);
+    P2.setWaktuPulang(W2P);
 
     Pegawai P3;
     P3.input();
-    cout << "==================================================================================\n";
-    cout << "| Kode Pegawai | \tNama\t | Waktu Datang | Waktu Pulang | Waktu Kerja | \tUpah\t |\n";
-    cout << "==================================================================================\n";
+    cout << "============================================================================================\n";
+    cout << "| Kode Pegawai\t| Nama\t\t| Waktu Datang\t| Waktu Pulang\t| Waktu Kerja\t| Upah     |\n";
+    cout << "============================================================================================\n";
     P1.print();
     P2.print();
     P3.print();
@@ -113,10 +114,10 @@ int main() {
     W4P.setJam(19);
     W4P.setMenit(50);
     Pegawai P4(200059, "Deani", W4D, W4P);
-    cout << P4.getKode() << "\t"
-         << P4.getNama() << "\t";
-    W4D.toString();
-    W4P.toString();
-    P4.hitungJamKerja().toString();
-    cout << P4.hitungUpah() << "\t";
+    cout << "| " << P4.getKode() << "\t"
+         << "| " << P4.getNama() << "\t\t" 
+         << "| " << W4D.toString() << "\t\t"
+         << "| " << W4P.toString() << "\t\t"
+         << "| " << P4.hitungJamKerja().toString() << "\t\t"
+         << "| Rp" << P4.hitungUpah() << " |\n";
 }
