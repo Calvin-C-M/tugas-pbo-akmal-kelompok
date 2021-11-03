@@ -52,11 +52,11 @@ class Matriks :
         for i in range(0, self.baris) :
             temp=0
             for j in range(0, self.kolom) :
-                temp += self.matriks[j][i]
+                temp += int(self.matriks[j][i])
             nilaiK.append(temp)
         
         for i in range(0, self.kolom) :
-            print(nilaiK[i])
+            print(nilaiK[i], end="\t")
 
 A = Matriks(0,0)
 A.input()
