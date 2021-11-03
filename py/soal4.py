@@ -5,7 +5,11 @@
 # - Deani Puteri Virdiana (140810200059)
 
 class PersegiPanjang :
-    def __init__(self, p, l):
+    def __init__(self):
+        self.__panjang=0
+        self.__lebar=0
+
+    def setPersegiPanjang(self, p, l) :
         self.__panjang=p
         self.__lebar=l
 
@@ -15,17 +19,23 @@ class PersegiPanjang :
     def getPanjang(self) : return self.__panjang
     def getLebar(self) : return self.__lebar
 
-    def hitungLuas(self) : return self.__panjang * self.__lebar
-    def hitungKeliling(self) : return (2*self.__panjang) + (2*self.__lebar)
+    def hitungLuas(self) : return int(self.__panjang) * int(self.__lebar)
+
+    def input(self) :
+        self.__panjang=input("Masukkan panjang: ")
+        self.__lebar=input("Masukkan lebar: ")
 
     def print(self) :
-        print("Panjang = " + self.__panjang)
-        print("Lebar = " + self.__lebar)
-        print("Luas = " + self.hitungLuas())
-        print("Keliling = " + self.hitungKeliling())
+        print("Panjang = " + str(self.__panjang))
+        print("Lebar = " + str(self.__lebar))
 
-panjang=input("Masukkan panjang: ")
-lebar=input("Masukkan lebar: ")
+    def printLuas1(luas) :
+        print("Luas = " + luas)
+    
+    def printLuas2(self) :
+        print("Luas = " + str(self.hitungLuas()))
 
-pp=PersegiPanjang(float(panjang), float(lebar))
+pp=PersegiPanjang()
+pp.input()
 pp.print()
+pp.printLuas2()
