@@ -16,14 +16,14 @@ class Pegawai:
     def getNama(self) : return self.__nama
 
     def input(self) :
-        waktuDatang = Waktu(0, 0)
-        waktuPulang = Waktu(0, 0)
+        self.__datang = Waktu(0, 0)
+        self.__pulang = Waktu(0, 0)
         self.__kode = input("Masukkan kode pegawai: ")
         self.__nama = input("Masukkan nama pegawai: ")
         print("JAM DATANG")
-        self.__datang = waktuDatang.input()
+        self.__datang.input()
         print("JAM PULANG")
-        self.__pulang = waktuPulang.input()
+        self.__pulang.input()
 
     def hitungJamKerja(self) :
         jamKerja=Waktu(0,0)
@@ -31,8 +31,8 @@ class Pegawai:
         jamKeluar=self.__pulang.getJam()
         if jamMasuk < jamKeluar and self.__datang.getMenit() > self.__datang.getMenit() :
             jamMasuk += 1
-        jamKerja.setJam(jamKeluar-jamMasuk)
-        jamKerja.setMenit(abs(self.__pulang.getMenit()-self.__datang.getMenit()))
+        jamKerja.setJam(int(jamKeluar)-int(jamMasuk))
+        jamKerja.setMenit(abs(int(self.__pulang.getMenit())-int(self.__datang.getMenit())))
         return jamKerja
 
     def hitungUpah(self) :
