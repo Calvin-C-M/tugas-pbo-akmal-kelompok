@@ -13,6 +13,15 @@ class Bintang :
 
     def printFor(self) :
         counter=0
+        print("RATA KIRI")
+        for i in reversed(range(1, self.__baris+1)) :
+            counter += 1
+            print(str(counter) + ".", end=" ")
+            for j in range(0, i) :
+                print("*", end=" ")
+            print()
+
+        print("RATA KANAN")
         for i in range(1, self.__baris+1) :
             counter += 1
             print(str(counter) + ".", end=" ")
@@ -24,6 +33,19 @@ class Bintang :
 
     def printWhile(self) :
         counter=0
+        print("RATA KIRI")
+        i=self.__baris
+        while i >= 1 :
+            j=1
+            counter+=1
+            print(str(counter) + ".", end=" ")
+            while j<=i : 
+                print("*", end=" ")
+                j += 1
+            i -= 1
+            print()
+        
+        print("RATA KANAN")
         i=1
         while i<=self.__baris :
             k=j=1
