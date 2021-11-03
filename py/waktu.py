@@ -11,9 +11,9 @@ class Waktu :
 
     def wrongInput(self) :
         return (
-            (self.__jam > 24 or self.__jam < 0)
+            (int(self.__jam) > 24 or int(self.__jam < 0))
             and
-            (self.__menit > 59 or self.__menit < 0)
+            (int(self.__menit) > 59 or int(self.__menit < 0))
         )
 
     def input(self) :
@@ -23,4 +23,4 @@ class Waktu :
             print("Waktu yang anda input tidak sesuai dengan ketentuan")
             return
 
-    def toString(self) : return self.__jam + ":" + self.__menit
+    def toString(self) : return str(self.__jam) + ":" + str(self.__menit)

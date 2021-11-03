@@ -1,5 +1,4 @@
 from py.waktu import Waktu
-import waktu
 
 class Pegawai:
     def __init__(self,kode,nama,masuk,pulang) :
@@ -20,7 +19,7 @@ class Pegawai:
         jamKeluar=self.__pulang.getJam()
         if jamMasuk < jamKeluar and self.__datang.getMenit() > self.__datang.getMenit() :
             jamMasuk += 1
-        jamKerja.setJam(jamMasuk-jamKeluar)
+        jamKerja.setJam(jamKeluar-jamMasuk)
         jamKerja.setMenit(abs(self.__pulang.getMenit()-self.__datang.getMenit()))
         return jamKerja
         
