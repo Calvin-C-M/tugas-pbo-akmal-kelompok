@@ -1,4 +1,4 @@
-from py.waktu import Waktu
+from waktu import Waktu
 
 class Pegawai:
     def __init__(self,kode,nama,masuk,pulang) :
@@ -10,8 +10,18 @@ class Pegawai:
 
     def setKode(self,kode) : self.__kode=kode
     def setNama(self,nama) : self.__nama=nama
+    def setWaktuDatang(self, dtng) : self.__datang = dtng
+    def setWaktuPulang(self, plng) : self.__pulang = plng
     def getKode(self) : return self.__kode
     def getNama(self) : return self.__nama
+
+    def input(self) :
+        self.__kode = input("Masukkan kode pegawai: ")
+        self.__nama = input("Masukkan nama pegawai: ")
+        print("JAM DATANG")
+        self.__datang.input()
+        print("JAM PULANG")
+        self.__pulang.input()
 
     def hitungJamKerja(self) :
         jamKerja=Waktu(0,0)
@@ -22,7 +32,6 @@ class Pegawai:
         jamKerja.setJam(jamKeluar-jamMasuk)
         jamKerja.setMenit(abs(self.__pulang.getMenit()-self.__datang.getMenit()))
         return jamKerja
-        
 
     def hitungUpah(self) :
         jam=0
@@ -33,3 +42,55 @@ class Pegawai:
         
         return jam*self.UPAH
 
+    def print(self) :
+        print("| " + str(self.__kode) + "\t"
+              "| " + str(self.__nama) + "\t"
+              "| " + str(self.__datang.toString()) << "\t\t"
+              "| " + str(self.__pulang.toString()) << "\t\t"
+              "| " + str(self.hitungJamKerja().toString()) << "\t\t"
+              "| Rp" + str(self.hitungUpah()) << " |\n")
+
+W1D = Waktu
+W1P = Waktu
+W1D.setJam(7)
+W1D.setMenit(30)
+W1P.setJam(17)
+W1P.setMenit(20)
+P1 = Pegawai(200035, "Naufal", W1D, W1P)
+
+P2 = Pegawai
+P2.setKode(200045)
+P2.setNama("Amalia")
+W2D = Waktu
+W2P = Waktu
+W2D.setJam(8)
+W2D.setMenit(30)
+W2P.setJam(14)
+W2P.setMenit(30)
+P2.setWaktuDatang(W2D)
+P2.setWaktuPulang(W2P)
+
+P3 = Pegawai
+P3.input()
+print("============================================================================================\n")
+print("| Kode Pegawai\t| Nama\t\t| Waktu Datang\t| Waktu Pulang\t| Waktu Kerja\t| Upah     |\n")
+print("============================================================================================\n")
+P1.print()
+P2.print()
+P3.print()
+
+W4D = Waktu
+W4P = Waktu
+W4D.setJam(9)
+W4D.setMenit(30)
+W4P.setJam(19)
+W4P.setMenit(50)
+P4 = Pegawai(200059, "Deani", W4D, W4P)
+print("| " + str(P4.getkode()) + "\t"
+    "| " + str(P4.getNama()) + "\t"
+    "| " + str(W4D.toString()) << "\t\t"
+    "| " + str(W4P.toString()) << "\t\t"
+    "| " + str(P4.hitungJamKerja().toString()) << "\t\t"
+    "| Rp" + str(P4.hitungUpah()) << " |\n")
+
+print("============================================================================================\n")
