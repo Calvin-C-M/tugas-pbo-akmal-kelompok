@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -19,18 +20,8 @@ class Matriks {
             this->kolom=k;
         }
 
-        void setBaris(int baris){
-            this->baris = baris;
-        }
-        void setKolom(int kolom){
-            this->kolom = kolom;
-        }
-        int getBaris(){
-            return this->baris;
-        }
-        int getKolom(){
-            return this->kolom;
-        }
+        int getBaris() { return this->baris; }
+        int getKolom() { return this->kolom; }
 
         void input() {
             cout << "Masukkan jumlah baris: "; cin >> this->baris;
@@ -51,40 +42,29 @@ class Matriks {
             }
         }
 
-        void jmlBaris(Matriks A){
-            for(int i=0; i<A.getBaris(); i++){
-                for(int j=0; j<A.getKolom(); j++){
-                    this->nilai[i][0] += A.nilai[i][j];
-                }
-            }
-        }
-        void jmlKolom(Matriks A){
-            for(int i=0; i<A.getBaris(); i++){
-                for(int j=0; j<A.getKolom(); j++){
-                    this->nilai[0][i] += A.nilai[j][i];
-                }
-            }
-        }
-
-        /*int *nilaiBaris() {
-            int nilaiB[this->baris];
+        vector<int> getNilaiBaris() {
+            vector<int> nilaiB;
             for(int i=0; i<this->baris; i++) {
+                int temp=0;
                 for(int j=0; j<this->kolom; j++) {
-                    nilaiB[i] += this->nilai[i][j];
+                    temp += this->nilai[i][j];
                 }
+                nilaiB.push_back(temp);
             }
             return nilaiB;
         }
 
-        int *nilaiKolom() {
-            int nilaiK[this->kolom];
+        vector<int> getNilaiKolom() {
+            vector<int> nilaiK;
             for(int i=0; i<this->baris; i++) {
+                int temp=0;
                 for(int j=0; j<this->kolom; j++) {
-                    nilaiK[j] += this->nilai[i][j];
+                    temp += this->nilai[j][i];
                 }
+                nilaiK.push_back(temp);
             }
             return nilaiK;
-        }*/
+        }
 };
 
 int main() {
@@ -93,14 +73,13 @@ int main() {
     A.input();
     cout << "\nMatriks A\n";
     A.print();
+    vector<int> jumlahBaris=A.getNilaiBaris();
+    vector<int> jumlahKolom=A.getNilaiKolom();
+    for(int baris: jumlahBaris) {
+        cout << baris;
+    }
 
-    Matriks jBaris(A.getBaris(), 1);
-    cout << "\nJumlah baris matriks A :\n";
-    jBaris.jmlBaris(A);
-    jBaris.print();
-
-    Matriks jKolom(1, A.getKolom());
-    cout << "\nJumlah kolom matriks A :\n";
-    jKolom.jmlKolom(A);
-    jKolom.print();
+    for(int kolom: jumlahKolom) {
+        cout << kolom;
+    }
 }
