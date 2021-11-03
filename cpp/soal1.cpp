@@ -24,7 +24,18 @@ class Bintang {
         }
 
         void printFor() {
+            cout << "RATA KIRI" << endl;
             int counter=0;
+            for(int i=this->baris; i>=1; i--) {
+                cout << (++counter) << ". ";
+                for(int j=1; j<=i; j++) {
+                    cout << "* ";
+                }
+                cout << endl;
+            }
+
+            cout << "RATA KANAN" << endl;
+            counter=0;
             for(int i=1; i<=this->baris; i++) {
                 cout << (++counter) << ". ";
                 for(int k=1; k<=i; k++) {
@@ -40,7 +51,23 @@ class Bintang {
 
         void printWhile() {
             int counter=0;
-            int i=1;
+            cout << "RATA KIRI" << endl;
+            int i=this->baris;
+            while(i>=1) {
+                int j=1;
+                cout << (++counter) << ". ";
+
+                while(j<=i) {
+                    cout << "* ";
+                    j++;
+                }
+                i--;
+                cout << endl;
+            }
+
+            cout << "RATA KANAN" << endl;
+            counter=0;
+            i=1;
             while(i<=this->baris) {
                 int j,k;
                 j=k=1;
