@@ -22,6 +22,7 @@ class Bintang :
             print()
 
         print("RATA KANAN")
+        counter=0
         for i in range(1, self.__baris+1) :
             counter += 1
             print(str(counter) + ".", end=" ")
@@ -47,6 +48,7 @@ class Bintang :
         
         print("RATA KANAN")
         i=1
+        counter=0
         while i<=self.__baris :
             k=j=1
             counter+=1
@@ -65,7 +67,7 @@ jumlahBaris=input("Masukkan jumlah baris: ")
 bintangFor=Bintang(int(jumlahBaris))
 bintangWhile=Bintang(int(jumlahBaris))
 
-print("Print bintang menggunakan for loop: ")
+print("\nPrint bintang menggunakan for loop: ")
 bintangFor.printFor()
-print("Print bintang menggunakan while loop: ")
+print("\nPrint bintang menggunakan while loop: ")
 bintangWhile.printWhile()
