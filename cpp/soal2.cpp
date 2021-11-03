@@ -55,9 +55,14 @@ class Matriks {
                     nilaiK[j] += this->nilai[i][j];
                 }
             }
+            return nilaiK;
         }
 };
 
 int main() {
+    Matriks A;
 
+    A.input();
+    cout << "\nMatriks A\n";
+    A.print();
 }

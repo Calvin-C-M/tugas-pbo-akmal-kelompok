@@ -66,5 +66,27 @@ class Pegawai {
 };
 
 int main() {
+    Pegawai P1(200035, "Naufal", 7.5, 17.2);
+    Pegawai P2;
+    Pegawai P3;
+    Pegawai P4(200059, "Deani", 9.5, 19.7);
 
+    P2.setKode(200045);
+    P2.setNama("Amalia");
+    P2.setJamMasuk(8.5);
+    P2.setJamKeluar(14.5);
+
+    P3.input();
+    cout << "==================================================================================\n";
+    cout << "| Kode Pegawai | \tNama\t | Waktu Datang | Waktu Pulang | Waktu Kerja | \tUpah\t |\n";
+    cout << "==================================================================================\n";
+    P1.print();
+    P2.print();
+    P3.print();
+    cout << P4.getKode() << "\t\t"
+         << P4.getNama() << "\t\t\t"
+         << P4.getJamMasuk() << "\t\t\t"
+         << P4.getJamKeluar() << "\t\t\t"
+         << P4.hitungJamKerja() << "\t\t\t"
+         << P4.hitungUpah() << "\t\t\t";
 }

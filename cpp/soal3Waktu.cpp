@@ -66,15 +66,54 @@ class Pegawai {
         }
 
         void print() {
-            cout << this->kode << "\t\t"
-                 << this->nama << "\t\t\t"
-                 << this->datang.toString() << "\t\t\t"
-                 << this->pulang.toString() << "\t\t\t"
-                 << this->hitungJamKerja().toString() << "\t\t\t"
-                 << this->hitungUpah();
+            cout << " " << this->kode << "\t"
+                 << " " << this->nama << "\t";
+            this->datang.toString();
+            this->pulang.toString();
+            this->hitungJamKerja().toString();
+            cout << " " << this->hitungUpah() << endl;
         }
 };
 
 int main() {
+    Waktu W1D;
+    Waktu W1P;
+    W1D.setJam(7);
+    W1D.setMenit(30);
+    W1P.setJam(17);
+    W1P.setMenit(20);
+    Pegawai P1(200035, "Naufal", W1D, W1P);
 
+    Pegawai P2;
+    P2.setKode(200045);
+    P2.setNama("Amalia");
+    Waktu W2D;
+    Waktu W2P;
+    W2D.setJam(8);
+    W2D.setMenit(30);
+    W2P.setJam(14);
+    W2P.setMenit(30);
+
+    Pegawai P3;
+    P3.input();
+    cout << "==================================================================================\n";
+    cout << "| Kode Pegawai | \tNama\t | Waktu Datang | Waktu Pulang | Waktu Kerja | \tUpah\t |\n";
+    cout << "==================================================================================\n";
+    P1.print();
+    P2.print();
+    P3.print();
+
+    Waktu W4D;
+    Waktu W4P;
+    W4D.setJam(9);
+    W4D.setMenit(30);
+    W4P.setJam(19);
+    W4P.setMenit(50);
+    Pegawai P4(200059, "Deani", W4D, W4P);
+    cout << P4.getKode() << "\t"
+         << P4.getNama() << "\t";
+    W4D.toString();
+    W4P.toString();
+    P4.hitungJamKerja().toString();
+    cout << P4.hitungUpah() << "\t";
 }

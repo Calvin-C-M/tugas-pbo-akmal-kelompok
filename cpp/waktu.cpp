@@ -1,3 +1,4 @@
+using namespace std;
 class Waktu {
     private:
         int jam;
@@ -37,7 +38,7 @@ class Waktu {
             }
         }
 
-        string toString() {
-            return this->jam + ":" + this->menit;
+        void toString() {
+            cout << this->jam + ":" + this->menit << "\t";
         }
 };
