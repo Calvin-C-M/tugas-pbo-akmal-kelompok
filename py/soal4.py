@@ -29,8 +29,8 @@ class PersegiPanjang :
         print("Panjang = " + str(self.__panjang))
         print("Lebar = " + str(self.__lebar))
 
-    def printLuas1(luas) :
-        print("Luas = " + luas)
+    def printLuas1(self, luas) :
+        print("Luas = " + str(luas))
     
     def printLuas2(self) :
         print("Luas = " + str(self.hitungLuas()))
@@ -38,4 +38,5 @@ class PersegiPanjang :
 pp=PersegiPanjang()
 pp.input()
 pp.print()
-pp.printLuas2()
+pp.printLuas1(pp.hitungLuas())
+#pp.printLuas2()
